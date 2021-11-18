@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
 const video = document.getElementById("player1");
 
 document.querySelector("#play").addEventListener("click", function() {
-	console.log("[Video] Play");
+	console.log("[Video] Play (Volume=" + video.volume*100 + "%");
 	video.play();
 });
 
@@ -38,13 +38,13 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 
 document.querySelector("#mute").addEventListener("click", function() {
-	video.volume = 0;
+	video.muted = true;
 	console.log("[Video] Volume Muted");
 })
 
 document.querySelector("#slider").addEventListener("change", function() {
 	video.volume = document.querySelector("#slider").value/100;
-	console.log("[Video] Volume: "+video.volume);
+	console.log("[Video] Volume: " + video.volume*100 + "%");
 })
 
 document.querySelector("#vintage").addEventListener("click", function() {
